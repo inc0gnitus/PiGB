@@ -19,7 +19,7 @@ The SDR dongles get very hot. You need to hold everything in such a way that you
 
 ## No AM currently 
 
-Also, this currently only does FM, although in reality it can hop whatever the dongle supports. The linked dongle, which is a Nano, covers frequency range 25MHz - 1750MHz (but of course, the antenna matters, depending on what range). I typically use FM range and modulation, 88Mhz-108Mhz. Supporting AM is possible I imagine, but will require carrying around an upconverter and the approprate antenna. For my purposes, normal FM range or even a range that should have just static (varies by location) works well.
+Also, this currently only does FM, although in reality it can hop whatever the dongle supports. The linked dongle, which is a Nano, covers frequency range 25MHz - 1750MHz (but of course, the antenna matters, depending on what range). I typically use FM range and modulation, 88Mhz-108Mhz. Supporting AM is possible I imagine, but will require carrying around an upconverter (there is a nano version: [HamItUp Nano](https://www.amazon.com/Ham-Up-Nano-Upconverter-Accessories/dp/B084KL1MXM) and the approprate antenna. For my purposes, normal FM range or even a range that should have just static (varies by location) works well.
 
 # Parts Used
 
