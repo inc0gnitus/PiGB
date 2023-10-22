@@ -30,7 +30,7 @@ Also, this currently only does FM, although in reality it can hop whatever the d
 * Cable to go from SDR to antenna - [Amazon.com](https://www.amazon.com/gp/product/B00CTJN480)
 * SD card (if you don't buy the kit, the bigger the card, the more recordings you can make)
   
-# Usage (Post Install)
+# How I Use It
 
 YMMV, but for me when I reach a location I want to use the PiGB in, I plug in the battery and give it a minute to boot. Then on my phone, there will be a wireless network called PiGB4. Once joined, you can pull up the web interface to control the ghostbox. Typically I use "Stream to Icecast", which allows me to use VLC on my phone to play the audio stream and from there I can pair a bluetooth speaker or earbuds to my phone if I want privacy. I usually just use the phone speaker. Icecast is a nice option because multiple people can connect to the Pi's wifi AP and then stream from Icecast on their own device (with their own speaker/earbuds). 
 
