@@ -21,7 +21,7 @@ The SDR dongles get very hot. You need to hold everything in such a way that you
 
 Also, this currently only does FM, although in reality it can hop whatever the dongle supports. The linked dongle, which is a Nano, covers frequency range 25MHz - 1750MHz (but of course, the antenna matters, depending on what range). I typically use FM range and modulation, 88Mhz-108Mhz. Supporting AM is possible I imagine, but will require carrying around an upconverter (there is a nano version: [HamItUp Nano](https://www.amazon.com/Ham-Up-Nano-Upconverter-Accessories/dp/B084KL1MXM)) and the approprate antenna. For my purposes, normal FM range or even a range that should have just static (varies by location) works well.
 
-## No Case
+## No (Full) Case
 
 Right now I use the Pi4 case that came with the Canakit linked below, with the Nano SDR plugged into one of the USB ports and the antenna and battery attached with some velcro. The SDR is designed to get hot as it's used, so I am not sure how that can be put into a case that's easy to carry. It basically fits in the palm of my hand as it is now, but I've also considered adding some sensors (temp, etc), and there's no place to mount them currently. Here's a couple links showing how mine is put together. I like this because it goes in the palm of my hand and my hand can touch the antenna and still keep away from the hot SDR case.
 
