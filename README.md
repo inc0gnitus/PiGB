@@ -25,8 +25,8 @@ Also, this currently only does FM, although in reality it can hop whatever the d
 
 Right now I use the Pi4 case that came with the Canakit linked below, with the Nano SDR plugged into one of the USB ports and the antenna and battery attached with some velcro. The SDR is designed to get hot as it's used, so I am not sure how that can be put into a case that's easy to carry. It basically fits in the palm of my hand as it is now, but I've also considered adding some sensors (temp, etc), and there's no place to mount them currently. 
 
-![PiGB](https://raw.githubusercontent.com/inc0gnitus/PiGB/main/images/IMG_1532.jpeg?token=GHSAT0AAAAAACJHNUPLTOF5F5J2MAKUH7BMZJVHTGQ)
-![PiGB](https://raw.githubusercontent.com/inc0gnitus/PiGB/main/images/IMG_1531.jpeg?token=GHSAT0AAAAAACJHNUPLTOF5F5J2MAKUH7BMZJVHTGQ)
+![PiGB](https://raw.githubusercontent.com/inc0gnitus/PiGB/main/images/IMG_1532.jpeg)
+![PiGB](https://raw.githubusercontent.com/inc0gnitus/PiGB/main/images/IMG_1531.jpeg)
 
 # Parts Used
 
