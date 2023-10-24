@@ -75,6 +75,8 @@ It can absolutely be used plugged into power, have a bigger or different antenna
 
 * Save to file with AI transcription - Would be interesting to see what AI "hears" versus what we hear.
 
+* Add a real time clock module - The date and time will be wrong unless you plug it in so it has internet access to update date and time. Should be easily solved by adding a cheap RTC module.
+
 # Shout Outs
 
 * My wife who has helped me test this many times. I love her more!
