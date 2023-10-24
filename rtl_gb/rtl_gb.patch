@@ -1,0 +1,81 @@
+--- /home/pi/dev/orig/rtl-sdr-blog/src/CMakeLists.txt	2023-10-22 17:17:15.723663596 +0100
++++ /home/pi/dev/new/rtl-sdr-blog/src/CMakeLists.txt	2023-10-22 19:34:27.334424186 +0100
+@@ -90,11 +90,12 @@
+ add_executable(rtl_tcp rtl_tcp.c)
+ add_executable(rtl_test rtl_test.c)
+ add_executable(rtl_fm rtl_fm.c)
++add_executable(rtl_gb rtl_gb.c)
+ add_executable(rtl_eeprom rtl_eeprom.c)
+ add_executable(rtl_adsb rtl_adsb.c)
+ add_executable(rtl_power rtl_power.c)
+ add_executable(rtl_biast rtl_biast.c)
+-set(INSTALL_TARGETS rtlsdr rtlsdr_static rtl_sdr rtl_tcp rtl_test rtl_fm rtl_eeprom rtl_adsb rtl_power rtl_biast)
++set(INSTALL_TARGETS rtlsdr rtlsdr_static rtl_sdr rtl_tcp rtl_test rtl_fm rtl_gb rtl_eeprom rtl_adsb rtl_power rtl_biast)
+ 
+ target_link_libraries(rtl_sdr rtlsdr convenience_static
+     ${LIBUSB_LIBRARIES}
+@@ -112,6 +113,10 @@
+     ${LIBUSB_LIBRARIES}
+     ${CMAKE_THREAD_LIBS_INIT}
+ )
++target_link_libraries(rtl_gb rtlsdr convenience_static
++    ${LIBUSB_LIBRARIES}
++    ${CMAKE_THREAD_LIBS_INIT}
++)
+ target_link_libraries(rtl_eeprom rtlsdr convenience_static
+     ${LIBUSB_LIBRARIES}
+     ${CMAKE_THREAD_LIBS_INIT}
+@@ -130,6 +135,7 @@
+ )
+ if(UNIX)
+ target_link_libraries(rtl_fm m)
++target_link_libraries(rtl_gb m)
+ target_link_libraries(rtl_adsb m)
+ target_link_libraries(rtl_power m)
+ if(APPLE OR CMAKE_SYSTEM MATCHES "OpenBSD")
+@@ -144,6 +150,7 @@
+ target_link_libraries(rtl_tcp ws2_32 libgetopt_static)
+ target_link_libraries(rtl_test libgetopt_static)
+ target_link_libraries(rtl_fm libgetopt_static)
++target_link_libraries(rtl_gb libgetopt_static)
+ target_link_libraries(rtl_eeprom libgetopt_static)
+ target_link_libraries(rtl_adsb libgetopt_static)
+ target_link_libraries(rtl_power libgetopt_static)
+@@ -152,6 +159,7 @@
+ set_property(TARGET rtl_tcp APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
+ set_property(TARGET rtl_test APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
+ set_property(TARGET rtl_fm APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
++set_property(TARGET rtl_gb APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
+ set_property(TARGET rtl_eeprom APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
+ set_property(TARGET rtl_adsb APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
+ set_property(TARGET rtl_power APPEND PROPERTY COMPILE_DEFINITIONS "rtlsdr_STATIC" )
+@@ -166,6 +174,6 @@
+ install(TARGETS rtlsdr_static EXPORT RTLSDR-export
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} # .so/.dylib file
+   )
+-install(TARGETS rtl_sdr rtl_tcp rtl_test rtl_fm rtl_eeprom rtl_adsb rtl_power rtl_biast
++install(TARGETS rtl_sdr rtl_tcp rtl_test rtl_fm rtl_gb rtl_eeprom rtl_adsb rtl_power rtl_biast
+   DESTINATION ${CMAKE_INSTALL_BINDIR}
+   )
+
+diff -Naur '--exclude=.git' /home/pi/orig/rtl-sdr-blog/src/Makefile.am /home/pi/new/rtl-sdr-blog/src/Makefile.am
+--- /home/pi/orig/rtl-sdr-blog/src/Makefile.am	2023-10-22 17:17:15.723663596 +0100
++++ /home/pi/new/rtl-sdr-blog/src/Makefile.am	2022-02-07 16:39:11.209923335 +0000
+@@ -12,7 +12,7 @@
+ librtlsdr_la_SOURCES = librtlsdr.c tuner_e4k.c tuner_fc0012.c tuner_fc0013.c tuner_fc2580.c tuner_r82xx.c
+ librtlsdr_la_LDFLAGS = -version-info $(LIBVERSION)
+ 
+-bin_PROGRAMS         = rtl_sdr rtl_tcp rtl_test rtl_fm rtl_eeprom rtl_adsb rtl_power
++bin_PROGRAMS         = rtl_sdr rtl_tcp rtl_test rtl_fm rtl_eeprom rtl_adsb rtl_power rtl_gb
+ 
+ rtl_sdr_SOURCES      = rtl_sdr.c convenience/convenience.c
+ rtl_sdr_LDADD        = librtlsdr.la
+@@ -26,6 +26,9 @@
+ rtl_fm_SOURCES      = rtl_fm.c convenience/convenience.c
+ rtl_fm_LDADD        = librtlsdr.la $(LIBM)
+ 
++rtl_gb_SOURCES      = rtl_gb.c convenience/convenience.c
++rtl_gb_LDADD        = librtlsdr.la $(LIBM)
++
+ rtl_eeprom_SOURCES      = rtl_eeprom.c convenience/convenience.c
+ rtl_eeprom_LDADD        = librtlsdr.la $(LIBM)
