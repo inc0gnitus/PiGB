@@ -17,7 +17,7 @@
 
 # Generate wav save filename
 CURRENTDATE=`date +"%Y-%m-%d_%H:%M:%S"`
-SAVEFILE="/home/pi/recordings/$CURRENTDATE.wav"
+SAVEFILE="/home/pigb/recordings/$CURRENTDATE.wav"
 
 # Noise profiles
 NOISEPROFDIR="/var/www/html/gb/noiseprof"
