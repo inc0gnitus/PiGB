@@ -30,8 +30,8 @@ Give the Pi a minute or two to boot, and then on your laptop or mobile device wi
 The default config above does not set a wireless password. If you want to add a password to the PiGB SSID, run the following commands (replacing _yourpassword_ with the password you want):
 
    ```
-   nmcli con modify PiGB wifi-sec.key-mgmt wpa-psk
-   nmcli con modify PiGB wifi-sec.psk "yourpassword"
+   sudo nmcli con modify PiGB wifi-sec.key-mgmt wpa-psk
+   sudo nmcli con modify PiGB wifi-sec.psk "yourpassword"
    ```
 
 I do highly recommend using a wireless password, but your situation might be different.

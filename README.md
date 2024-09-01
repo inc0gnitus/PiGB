@@ -42,10 +42,12 @@ Not pictured is the USB to USB-C power cable.
 # Parts Used
 
 * Raspberry Pi 4 - [Amazon.com](https://www.amazon.com/CanaKit-Raspberry-8GB-Starter-Kit/dp/B08956GVXN)
+	* Raspberry PI 3 and below is not recommended because they do not have a USB 3.0 port which could lead to drops when using the SDR
+	* A Raspberry Pi 5 can be used but has different [power requirements](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#typical-power-requirements) so keep that in mind when buying a battery.
 * Battery - At least 10,000mA - [Amazon.com](https://www.amazon.com/gp/product/B0194WDVHI)
 * USB to USB-C power cable if the battery you buy doesnt have o e
 * Antenna - [Amazon.com](https://www.amazon.com/gp/product/B07PT76LW4)
-* SDR - I used a NooELEC Nano - [Amazon.com](https://www.amazon.com/gp/product/B07XPZMDZV)
+* SDR - I used a NooELEC Nano - [Amazon.com](https://a.co/d/6xDnP3k)
 * Cable to go from SDR to antenna - [Amazon.com](https://www.amazon.com/gp/product/B00CTJN480)
 * SD card (if you don't buy the kit, the bigger the card, the more recordings you can make)
 
